@@ -30,7 +30,7 @@ const  EditPost= () => {
    
   const fetchPost =async ()=>{
     try{
-        const res = await axios.get(`http://localhost:5000/user/get-post/${postId}`,{
+        const res = await axios.get(`https://tinytales-server.onrender.com/user/get-post/${postId}`,{
             headers:{
               Authorization:`Bearer ${user.token}`
               
@@ -86,7 +86,7 @@ const  EditPost= () => {
       data.postId=postId
     
       try{
-        const response = await axios.patch("http://localhost:5000/user/edit-post",data,{
+        const response = await axios.patch("https://tinytales-server.onrender.com/user/edit-post",data,{
           headers:{
             Authorization:`Bearer ${user.token}`
          }

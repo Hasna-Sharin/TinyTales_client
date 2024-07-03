@@ -17,7 +17,7 @@ const Profile = () => {
     console.log(blogs);
     const fetchBlogs = async()=>{
       try{
-         const res = await axios.get("http://localhost:5000/user/logedUser-posts/"+user.user._id,{
+         const res = await axios.get("https://tinytales-server.onrender.com/user/logedUser-posts/"+user.user._id,{
             headers:{
               Authorization:`Bearer ${user.token}`
            }
@@ -37,7 +37,7 @@ const Profile = () => {
     const deletePost = async(id)=>{
        
         try{
-            const res = await axios.delete(`http://localhost:5000/user/delete-post/${id}`,{
+            const res = await axios.delete(`https://tinytales-server.onrender.com/user/delete-post/${id}`,{
                 headers:{
                   Authorization:`Bearer ${user.token}`
                }

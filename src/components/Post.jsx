@@ -18,7 +18,7 @@ const Post = ({blog,i}) => {
     
         }
         try{
-            const res = await axios.post("http://localhost:5000/user/like-post",body,{
+            const res = await axios.post("https://tinytales-server.onrender.com/user/like-post",body,{
                 headers:{
                     Authorization:`Bearer ${user?.token}`
                  }
@@ -46,7 +46,7 @@ const Post = ({blog,i}) => {
 
         }
         try{
-            const res = await axios.post("http://localhost:5000/user/dislike-post",body,{
+            const res = await axios.post("https://tinytales-server.onrender.com/user/dislike-post",body,{
                 headers:{
                     Authorization:`Bearer ${user?.token}`
                  }

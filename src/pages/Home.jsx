@@ -13,7 +13,7 @@ const Home = () => {
 
   const fetchBlogs = async()=>{
     try{
-       const res = await axios.get("http://localhost:5000/user/get-posts",{
+       const res = await axios.get("https://tinytales-server.onrender.com/user/get-posts",{
         headers:{
           Authorization:`Bearer ${user.token}`
        }

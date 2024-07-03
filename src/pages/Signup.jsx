@@ -26,7 +26,7 @@ const SignUp = () => {
         console.log(data);
        
         try{
-            const res = await axios.post("http://localhost:5000/auth/register",data)
+            const res = await axios.post("https://tinytales-server.onrender.com/auth/register",data)
             console.log(res.data);
             navigate("/")
             
@@ -39,7 +39,7 @@ const SignUp = () => {
     }
 
     const handleGoogleLogin = async (data)=>{
-        const response = await axios.post("http://localhost:5000/auth/google-auth",{credential:data.credential})
+        const response = await axios.post("https://tinytales-server.onrender.com/auth/google-auth",{credential:data.credential})
        console.log(response);
        console.log(response.data);
        login(response.data)

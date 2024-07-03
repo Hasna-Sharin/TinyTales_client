@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BACKEND_URL = 'http://localhost:5000/';
+const BACKEND_URL = 'https://tinytales-server.onrender.com/';
 
 const API = axios.create({
     baseURL:BACKEND_URL,

@@ -44,7 +44,7 @@ const CreatePost = () => {
       data.image = res.data.secure_url;
 
       try {
-        const response = await axios.post("http://localhost:5000/user/create-post",data,
+        const response = await axios.post("https://tinytales-server.onrender.com/user/create-post",data,
           {
             headers: {
               Authorization: `Bearer ${user.token}`,
