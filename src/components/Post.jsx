@@ -67,7 +67,7 @@ const Post = ({blog,i}) => {
                 <h1 className='text-2xl font-bold uppercase text-orange-500' >{blog.title}</h1>
                 <p className='text-xl font-thin'>{blog.desc}</p>
                 <p>{blog.backgroundStory}</p>
-                <p className='italic text-black'>posted by : <span className='font-bold capitalize'>{blog.userId.username}</span></p>
+                <p className='italic text-black'>posted by : <span className='font-bold capitalize'>{blog.userId?.username}</span></p>
                 <p className='italic text-black'>baby : <span className='font-bold capitalize'>{blog.baby}</span></p>
                 <div className='flex gap-5'>
                     <div className='flex items-center gap-2 cursor-pointer'>
