@@ -18,10 +18,6 @@ const SignUp = () => {
     const {register,handleSubmit,formState,getValues} = form
     const {login} = useAuth()
     const navigate = useNavigate()
-
-
-    
-
     const onSubmit = async(data)=>{
         console.log(data);
        
@@ -39,13 +35,20 @@ const SignUp = () => {
     }
 
     const handleGoogleLogin = async (data)=>{
-        const response = await axios.post("https://tinytales-server.onrender.com/auth/google-auth",{credential:data.credential})
-       console.log(response);
-       console.log(response.data);
-       login(response.data)
-    }
+        try{
 
-    return (
+            const response = await axios.post("https://tinytales-server.onrender.com/auth/google-auth",{credential:data.credential})
+            login(response.data)
+
+        }catch(err){
+            toast("Could not authenticate with google")
+        }
+    //    console.log(response);
+    //    console.log(response.data);
+
+       
+    }
+     return (
         <section className="bg-gray-50 dark:bg-white">
             <ToastContainer/>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
