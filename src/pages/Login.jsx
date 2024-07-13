@@ -53,7 +53,7 @@ const LogIn = () => {
       
     }
     return (
-        <section className="bg-gray-50 dark:bg-white">
+        <section className=" bg-white">
             <ToastContainer/>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <div className="w-full bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 dark:bg-[#FDF9F6] dark:border-gray-700">
@@ -95,7 +95,7 @@ const LogIn = () => {
                                 </div>
                                 <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
                             </div>
-                            <button type="submit" className="w-full text-white bg-white hover:bg-white/75 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-black dark:hover:bg-black/75 dark:focus:ring-black/75">Sign in</button>
+                            <button type="submit" className="w-full text-white   focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-black hover:bg-black/75 focus:ring-black/75">Sign in</button>
                             <div className='flex justify-center'>
                                 <GoogleLogin   onSuccess={handleGoogleLogin} onError={() => {console.log('Login Failed');}}/>
 

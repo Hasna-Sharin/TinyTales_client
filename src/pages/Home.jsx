@@ -34,7 +34,7 @@ const Home = () => {
   },[])
 
   return (
-    <div className='w-full min-h-screen bg-white/45 px-12 pt-20 text-black'>
+    <div className='w-full min-h-screen bg-white/45 px-4 md:px-12 pt-20 text-black'>
       <div className='w-full flex flex-col gap-5 items-center '>
         {blogs.map((blog, i) => (
           <Post key={i} blog={blog} i={i}/>
