@@ -52,14 +52,14 @@ const SignUp = () => {
         <section className="bg-gray-50 dark:bg-white">
             <ToastContainer/>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-[#FDF9F6] ">
+                <div className="w-full  rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-[#FDF9F6] ">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black/65">
                             Create and account
                         </h1>
                         <form className="space-y-4 md:space-y-6" action="#" onSubmit={handleSubmit(onSubmit)}>
                         <div>
-                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-orange-600">Username</label>
+                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-black/55 ">Username</label>
                                 <input {...register("username",{required:{
                                     value:true,
                                     message:"please enter your username"
@@ -76,7 +76,7 @@ const SignUp = () => {
 
                             </div>
                             <div>
-                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-orange-600">Your email</label>
+                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-black/55">Your email</label>
                                 <input {...register("email",{required:{
                                     value:true,
                                     message:"please enter your email"
@@ -90,7 +90,7 @@ const SignUp = () => {
                                 <p className="text-red-500 text-sm mt-2">{formState.errors.email?.message}</p>
                             </div>
                             <div>
-                                <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-orange-600">Password</label>
+                                <label htmlFor="password" className="block mb-2 text-sm font-medium text-black/55">Password</label>
                                 <input {...register("password",{required:{
                                     value:true,
                                     message:"Please enter your password"
@@ -108,7 +108,7 @@ const SignUp = () => {
 
                             </div>
                             <div>
-                                <label htmlFor="confirm-password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-orange-600">Confirm password</label>
+                                <label htmlFor="confirm-password" className="block mb-2 text-sm font-medium text-black/55">Confirm password</label>
                                 <input  {...register("confirmPassword",{
                                    required:{
                                     value:true,

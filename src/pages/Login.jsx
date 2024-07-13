@@ -63,7 +63,7 @@ const LogIn = () => {
                         </h1>
                         <form className="space-y-4 md:space-y-6" action="#" onSubmit={handleSubmit(onSubmit)}>
                             <div>
-                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-orange-600">Your email</label>
+                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-black/55">Your email</label>
                                 <input {...register("email",{required:{
                                     value:true,
                                     message:"please enter your email"
@@ -74,7 +74,7 @@ const LogIn = () => {
                                 <p className="text-red-500 text-sm mt-2">{formState.errors.email?.message}</p>
                             </div>
                             <div>
-                                <label htmlFor="password" className="block mb-2 text-sm font-medium text-back dark:text-orange-600">Password</label>
+                                <label htmlFor="password" className="block mb-2 text-sm font-medium text-back/55">Password</label>
                                 <input {...register("password",{required:{
                                     value:true,
                                     message:"please enter your password"

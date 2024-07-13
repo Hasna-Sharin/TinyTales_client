@@ -43,7 +43,12 @@ const Profile = () => {
                }
         
                })
-            console.log(res.data);
+            const value = res.data;
+            console.log(value);
+            const deletedValue = blogs.filter(item=>item._id !==id)
+                setBlogs(deletedValue)
+                
+            // const deletedValue = blogs.filter()
         }catch(err){
             console.log(err);
 
@@ -55,6 +60,11 @@ const Profile = () => {
                 <h1 className='text-3xl font-bold'>{user.user.username}</h1>
                 <p className='text-lg'><span className='text-xl font-bold mr-2'>{blogs.length}</span>Posts</p>
             </div>
+            {blogs.length===0 ? (
+            <div className='flex justify-center text-xl md:text-4xl mt-20 text-black/65 rounded'>
+            <button className='bg-[#FDF9F6] px-4 py-2 md:px-8 md:py-5 font-bold '>No Posts yet <br />Create One</button>
+
+            </div>) : (
             <div className='w-full flex flex-col gap-5 items-center '>
                 {blogs.map((blog, i) =>  (
                     
@@ -88,7 +98,7 @@ const Profile = () => {
                         </div>
                     </div>
                 ))}
-            </div>
+            </div>)}
 
         </div>
     )

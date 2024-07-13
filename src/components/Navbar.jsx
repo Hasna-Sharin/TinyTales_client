@@ -25,7 +25,7 @@ const Navbar = () => {
             <div id="dropdown" className="z-10 relative bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700">
               <button onClick={() => setToggleBtn(!toggleBtn)} className="text-orange-600 bg-white/75   focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-white dark:hover:bg-gray-400 " type="button">{user.user.username}</button>
               <ul hidden={toggleBtn} className="py-2  text-sm text-gray-700 dark:text-gray-200 absolute top-12" aria-labelledby="dropdownDefaultButton">
-                <li onClick={logout} className='bg-gray-700 w-full cursor-pointer'>
+                <li onClick={logout} className='hover:bg-gray-700 bg-gray-200 text-orange-600 w-full px-5 py-2.5 rounded cursor-pointer '>
                   Logout
                 </li>
               </ul>
