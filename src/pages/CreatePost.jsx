@@ -60,20 +60,20 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="w-full min-h-screen px-10 flex bg-white pt-24 text-white">
+    <div className="w-full min-h-screen px-10 flex flex-col md:flex-row bg-white pt-24 text-white">
       {formState.isSubmitting && (
         <div className="absolute w-full h-screen flex justify-center items-center top-0 left-0 bg-[#00000050]">
           <LoaderIcon className="h-28 w-28 animate-spin" />
         </div>
       )}
-      <div className="w-1/2 flex justify-center items-center pr-10">
+      <div className="w-full md:w-1/2 flex  justify-center items-center md:py-4">
         {!image ? (
           <CameraOffIcon className="h-36 w-36 opacity-25 text-black " />
         ) : (
           <div>
             {" "}
             <img
-              className="max-h-screen"
+              className="max-h-96 object-cover"
               src={URL.createObjectURL(image)}
               alt=""
             />{" "}
@@ -81,7 +81,7 @@ const CreatePost = () => {
         )}
       </div>
       <form
-        className="space-y-4 md:space-y-6 w-1/2"
+        className="space-y-4 md:space-y-6 w-full py-5 md:w-1/2 md:px-10"
         onSubmit={handleSubmit(onSubmit)}
         action="#"
       >

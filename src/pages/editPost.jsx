@@ -44,7 +44,7 @@ const  EditPost= () => {
            setValue("baby",post.baby)
            setValue("title",post.title)
            setValue("desc",post.desc)
-           setValue("content",post.content)
+           setValue("backgroundStory",post.backgroundStory)
            setImage(post.image)
 
     }catch{
@@ -103,7 +103,7 @@ const  EditPost= () => {
   };
  
     return (
-      <div className="w-full min-h-screen px-10 flex bg-gray-800 pt-24 text-white">
+      <div className="w-full flex flex-col md:flex-row  min-h-screen items-center md:px-1 pb-8 pt-20 md:pt-24 ">
         
         {
             formState.isSubmitting &&
@@ -118,7 +118,7 @@ const  EditPost= () => {
             <div>
               {" "}
               <img
-                className="max-h-screen"
+                className="max-h-96 object-cover"
                 src={typeof image === 'string'? image : URL.createObjectURL(image)}
                 alt=""
               />{" "}
@@ -126,15 +126,15 @@ const  EditPost= () => {
           )}
         </div>
         <form
-          className="space-y-4 md:space-y-6 w-1/2"
+          className="space-y-4 md:space-y-6 w-full px-6 md:w-1/2"
           onSubmit={handleSubmit(onSubmit)}
           action="#"
         >
           <div>
             <label
               htmlFor="email"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
+              className="block mb-2 text-sm font-medium text-gray-900 "
+              >
               Baby's Name
             </label>
             <input
@@ -153,7 +153,7 @@ const  EditPost= () => {
               type="text"
               
               id="email"
-              className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-[#FDF9F6] dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Movie"
               required=""
             />
@@ -163,8 +163,8 @@ const  EditPost= () => {
           <div>
             <label
               htmlFor="email"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
+              className="block mb-2 text-sm font-medium text-gray-900 "
+              >
               Title
             </label>
             <input
@@ -181,7 +181,7 @@ const  EditPost= () => {
               type="text"
               
               id="email"
-              className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-[#FDF9F6] dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Title of your post"
               required=""
             />
@@ -191,8 +191,8 @@ const  EditPost= () => {
           <div>
             <label
               htmlFor="password"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
+              className="block mb-2 text-sm font-medium text-gray-900 "
+              >
               Image
             </label>
             <input
@@ -203,7 +203,7 @@ const  EditPost= () => {
               
               id="password"
               placeholder="image-file"
-              className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-[#FDF9F6] dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required=""
             />
 
@@ -211,8 +211,8 @@ const  EditPost= () => {
           <div>
             <label
               htmlFor="description"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
+              className="block mb-2 text-sm font-medium text-gray-900 "
+              >
               Description
             </label>
             <textarea
@@ -230,7 +230,7 @@ const  EditPost= () => {
               type="text"
               id="description"
               placeholder="blog description"
-              className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-[#FDF9F6] dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required=""
             />
              <p className="text-red-500 text-sm mt-2">{formState.errors.desc?.message}</p>
@@ -239,8 +239,8 @@ const  EditPost= () => {
           <div>
             <label
               htmlFor="content"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
+              className="block mb-2 text-sm font-medium text-gray-900 "
+              >
               Background Story
             </label>
             <textarea
@@ -257,7 +257,7 @@ const  EditPost= () => {
               type="text"
               id="content"
               placeholder="Background Story"
-              className="bg-gray-50 border border-gray-300 h-28 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-[#FDF9F6] dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required=""
             />
             <p className="text-red-500 text-sm mt-2">{formState.errors.backgroundStory?.message}</p>
@@ -266,8 +266,8 @@ const  EditPost= () => {
 
           <button
             type="submit"
-            className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-          >
+            className="w-full text-white bg-black/75 hover:bg-black/95 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center   dark:focus:ring-primary-800"
+            >
             Update Post
           </button>
         </form>
