@@ -60,9 +60,9 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="w-full min-h-screen px-10 flex flex-col md:flex-row bg-white pt-24 text-white">
+    <div className="w-full h-screen md:min-h-screen px-10 flex flex-col md:flex-row bg-white pt-24 text-white">
       {formState.isSubmitting && (
-        <div className="absolute w-full h-screen flex justify-center items-center top-0 left-0 bg-[#00000050]">
+        <div className="absolute w-full h-screen md:h-screen flex justify-center items-center top-0 left-0 bg-[#00000050]">
           <LoaderIcon className="h-28 w-28 animate-spin" />
         </div>
       )}

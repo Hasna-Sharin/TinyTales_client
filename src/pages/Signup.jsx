@@ -118,6 +118,8 @@ const SignUp = () => {
                                 <p className="text-red-500 text-sm mt-2">{formState.errors.confirmPassword?.message}</p>
 
                             </div>
+                            {formState.isSubmitting && <p className="text-red-700 text-sm md:text-lg">Please wait some time.The data is fetching</p>}
+
                             <div className="flex items-start">
                                 <div className="flex items-center h-5">
                                     <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-white dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />

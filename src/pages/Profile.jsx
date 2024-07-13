@@ -55,7 +55,7 @@ const Profile = () => {
         }
     }
     return (
-        <div className='w-full  min-h-screen dark:bg-white px-12 pt-20 '>
+        <div className='w-full  min-h-screen dark:bg-white p-4 md:px-12 pt-20 '>
             <div className='w-full bg-[#FDF9F6] my-5 h-28 flex flex-col items-center justify-evenly text-black/65 '>
                 <h1 className='text-3xl font-bold'>{user.user.username}</h1>
                 <p className='text-lg'><span className='text-xl font-bold mr-2'>{blogs.length}</span>Posts</p>
@@ -68,7 +68,7 @@ const Profile = () => {
             <div className='w-full flex flex-col gap-5 items-center '>
                 {blogs.map((blog, i) =>  (
                     
-                    <div key={i} className={`relative w-full flex flex-col md:flex-row justify-between items-center border-2 bg-[#FDF9F6] gap-8 shadow-md p-6 md:p-10 ${i % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"}`}>
+                    <div key={i} className={`relative w-full flex flex-col md:flex-row justify-between items-center border-2 bg-[#FDF9F6] gap-8 shadow-md p-4 md:p-10 ${i % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"}`}>
                         <img src={blog.image} alt="" className='h-auto w-full md:w-1/3' />
                         
                         <div className='w-full  md:w-2/3 flex flex-col gap-5 md:p-10 '>
@@ -88,12 +88,12 @@ const Profile = () => {
                                     <p className='text-sm'>{blog.dislikes.length}</p>
                                 </div>
                             </div>
-                            <div className='flex gap-5 '>
+                            <div className='flex gap-3 p-1 '>
                                 <Link to={`/edit-post/${blog._id}`}>
-                                <button type="submit" className="w-fit px-3  md:px-10 flex  items-center justify-center gap-1 text-white cursor-pointer hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-xs md:text-sm py-1.5 md:py-2.5 text-center dark:bg-orange-600 "><Edit/> Edit Post</button>
+                                <button type="submit" className="w-28 md:w-fit px-3  md:px-10 flex  items-center justify-center gap-1 text-white cursor-pointer hover:bg-orange-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-xs md:text-sm py-1.5 md:py-2.5 text-center bg-orange-600 "><Edit/> Edit Post</button>
 
                                 </Link>
-                                <button onClick={()=>deletePost(blog._id)} type="submit" className="w-fit px-2 md:px-10 flex  items-center justify-center gap-1 text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs md:text-sm py-1.5 md:py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"><Trash/> Delete Post</button>
+                                <button onClick={()=>deletePost(blog._id)} type="submit" className="w-40 md:w-fit px-2 md:px-10 flex  items-center justify-center gap-1 text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs md:text-sm  md:py-2.5 text-center "><Trash/> Delete Post</button>
                             </div>
                         </div>
                     </div>

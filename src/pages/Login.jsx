@@ -16,9 +16,9 @@ const LogIn = () => {
 
     const form = useForm()
     const {register,handleSubmit,formState} = form;
-    // console.log(register);
+    console.log(formState);
 
-    const {login} = useAuth()
+    const {login,user} = useAuth()
 
     const onSubmit = async(data)=>{
         console.log(data);
@@ -84,6 +84,8 @@ const LogIn = () => {
                                 <p className="text-red-500 text-sm mt-2">{formState.errors.password?.message}</p>
 
                             </div>
+                            {formState.isSubmitting && <p className="text-red-700 text-sm md:text-lg">Please wait some time.The data is fetching</p>}
+
                             <div className="flex items-center justify-between">
                                 <div className="flex items-start">
                                     <div className="flex items-center h-5">
