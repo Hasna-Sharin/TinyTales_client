@@ -88,12 +88,12 @@ const Profile = () => {
                                     <p className='text-sm'>{blog.dislikes.length}</p>
                                 </div>
                             </div>
-                            <div className='flex gap-3 p-1 '>
+                            <div className='flex gap-3 p-1 justify-evenly '>
                                 <Link to={`/edit-post/${blog._id}`}>
                                 <button type="submit" className="w-28 md:w-fit px-3  md:px-10 flex  items-center justify-center gap-1 text-white cursor-pointer hover:bg-orange-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-xs md:text-sm py-1.5 md:py-2.5 text-center bg-orange-600 "><Edit/> Edit Post</button>
 
                                 </Link>
-                                <button onClick={()=>deletePost(blog._id)} type="submit" className="w-32 md:w-fit px-2 md:px-10 flex  items-center justify-center gap-1 text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs md:text-sm  md:py-2.5 text-center "><Trash/> Delete Post</button>
+                                <button onClick={()=>deletePost(blog._id)} type="submit" className="w-32 md:w-fit px-3 md:px-10 flex  items-center justify-center gap-1 text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs md:text-sm  md:py-2.5 text-center "><Trash/> Delete Post</button>
                             </div>
                         </div>
                     </div>
