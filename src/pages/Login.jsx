@@ -104,7 +104,7 @@ const LogIn = () => {
                                 </div>
                             <Link to={"/signup"}>
                                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                                    Don’t have an account yet? <span className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</span>
+                                    Don’t have an account yet? <span className="font-medium text-primary-600 hover:underline ">Sign up</span>
                                 </p>
                             </Link>
                         </form>
