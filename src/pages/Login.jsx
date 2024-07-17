@@ -15,7 +15,7 @@ const LogIn = () => {
   const form = useForm();
   const { register, handleSubmit, formState } = form;
   console.log(formState);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const { login, user } = useAuth();
 
@@ -44,9 +44,10 @@ const LogIn = () => {
         "https://tinytales-server.onrender.com/auth/google-auth",
         { credential: data.credential }
       );
-
-      login(response.data);
-      setLoading(false);
+      if(!response.data){
+        setLoading(true)
+      }login(response.data);
+      
     } catch (err) {
       toast("Could not authenticate with google");
     }
