@@ -51,19 +51,20 @@ const LogIn = () => {
       toast("Could not authenticate with google");
     }
   };
+  {loading && (
+    <div className="absolute z-10 w-full h-screen md:h-screen flex justify-center items-center top-0 left-0 bg-[#00000050]">
+      <LoaderIcon className="h-28 w-28 animate-spin" />
+    </div>
+  )}
   return (
     <section className=" bg-white">
       <ToastContainer />
-      {loading && (
-        <div className="absolute w-full h-screen md:h-screen flex justify-center items-center top-0 left-0 bg-[#00000050]">
-          <LoaderIcon className="h-28 w-28 animate-spin" />
-        </div>
-      )}
+     
 
-      <div className="flex flex-col items-center justify-center px-4 py-8 mx-auto md:h-screen lg:py-0">
+      <div className="flex flex-col items-center justify-center z-0 px-4 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 dark:bg-[#FDF9F6] dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black/65">
+            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
               Sign in to your account
             </h1>
             <form
