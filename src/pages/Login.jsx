@@ -51,14 +51,15 @@ const LogIn = () => {
       toast("Could not authenticate with google");
     }
   };
-  {loading && (
+  
+  return (
+    <section className=" bg-white">
+      <ToastContainer />
+      {loading && (
     <div className="absolute  w-full h-screen md:h-screen flex justify-center items-center top-0 left-0 bg-[#00000050]">
       <LoaderIcon className="h-28 w-28 animate-spin" />
     </div>
   )}
-  return (
-    <section className=" bg-white">
-      <ToastContainer />
      
 
       <div className="flex flex-col items-center justify-center  px-4 py-8 mx-auto md:h-screen lg:py-0">
