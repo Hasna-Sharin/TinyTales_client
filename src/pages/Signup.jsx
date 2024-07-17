@@ -11,22 +11,16 @@ import {useNavigate} from 'react-router-dom'
 
 
 const SignUp = () => {
-    // const[username,setUsername]=useState('')
-    // const[email,setEmail]=useState('')
-    // const[password,setPassword]=useState('')
     const form = useForm()
     const {register,handleSubmit,formState,getValues} = form
     const {login} = useAuth()
     const navigate = useNavigate()
+
     const onSubmit = async(data)=>{
-        console.log(data);
-       
-        try{
+       try{
             const res = await axios.post("https://tinytales-server.onrender.com/auth/register",data)
             console.log(res.data);
             navigate("/")
-            
-            
         }catch(err){
             console.log(err);
             toast("Signup Failed")
@@ -43,16 +37,13 @@ const SignUp = () => {
         }catch(err){
             toast("Could not authenticate with google")
         }
-    //    console.log(response);
-    //    console.log(response.data);
-
        
     }
      return (
-        <section className="bg-gray-50 dark:bg-white">
+        <section className="bg-gray-50 min-h-screen">
             <ToastContainer/>
-            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                <div className="w-full  rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-[#FDF9F6] ">
+            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
+                <div className="w-full  rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 bg-[#FDF9F6] ">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black/65">
                             Create and account
