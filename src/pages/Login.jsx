@@ -6,6 +6,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import { AuthContext, useAuth } from "../context/Authcontext";
 import { GoogleLogin } from "@react-oauth/google";
+import { LoaderIcon } from "lucide-react";
 
 const LogIn = () => {
   // const[email,setEmail]=useState('')
