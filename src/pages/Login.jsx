@@ -44,10 +44,10 @@ const LogIn = () => {
         "https://tinytales-server.onrender.com/auth/google-auth",
         { credential: data.credential }
       );
-      if(!response.data){
-        setLoading(true)
-      }login(response.data);
-      
+      if (!response.data) {
+        setLoading(true);
+      }
+      login(response.data);
     } catch (err) {
       toast("Could not authenticate with google");
     }
@@ -55,6 +55,11 @@ const LogIn = () => {
   return (
     <section className=" bg-white">
       <ToastContainer />
+      {loading && (
+        <div className="absolute w-full h-screen md:h-screen flex justify-center items-center top-0 left-0 bg-[#00000050]">
+          <LoaderIcon className="h-28 w-28 animate-spin" />
+        </div>
+      )}
 
       <div className="flex flex-col items-center justify-center px-4 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 dark:bg-[#FDF9F6] dark:border-gray-700">
@@ -164,11 +169,6 @@ const LogIn = () => {
                     console.log("Login Failed");
                   }}
                 />
-                {loading && (
-                  <div className="absolute w-full h-screen md:h-screen flex justify-center items-center top-0 left-0 bg-[#00000050]">
-                    <LoaderIcon className="h-28 w-28 animate-spin" />
-                  </div>
-                )}
               </div>
               <Link to={"/signup"}>
                 <p className="text-sm font-light text-gray-500  mt-1 md:mt-2">
