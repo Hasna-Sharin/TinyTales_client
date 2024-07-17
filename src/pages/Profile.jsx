@@ -59,7 +59,7 @@ const Profile = () => {
     return (
         
         <div className='w-full  min-h-scree p-4 md:px-12 pt-20 '>
-            {loading&&<div className="absolute w-full h-screen md:h-screen flex justify-center items-center top-0 left-0 bg-[#00000050]">
+            {loading&&<div className="absolute inset-0  w-full h-screen md:h-screen flex justify-center items-center top-0 left-0 bg-[#00000080] z-50">
           <LoaderIcon className="h-28 w-28 animate-spin" />
         </div>}
             <div className='w-full bg-[#FDF9F6] my-5 h-28 flex flex-col items-center justify-evenly text-black/65 '>
