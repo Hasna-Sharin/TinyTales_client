@@ -13,6 +13,7 @@ import {useNavigate} from 'react-router-dom'
 const SignUp = () => {
     const form = useForm()
     const {register,handleSubmit,formState,getValues} = form
+    const [loading,setLoading]=useState(false)
     const {login} = useAuth()
     const navigate = useNavigate()
 
@@ -27,10 +28,10 @@ const SignUp = () => {
 
         }
     }
-
+    
     const handleGoogleLogin = async (data)=>{
+        setLoading(true)
         try{
-
             const response = await axios.post("https://tinytales-server.onrender.com/auth/google-auth",{credential:data.credential})
             login(response.data)
 

@@ -9,9 +9,6 @@ import { GoogleLogin } from "@react-oauth/google";
 import { LoaderIcon } from "lucide-react";
 
 const LogIn = () => {
-  // const[email,setEmail]=useState('')
-  // const[password,setPassword]=useState('')
-
   const form = useForm();
   const { register, handleSubmit, formState } = form;
   console.log(formState);
@@ -20,7 +17,7 @@ const LogIn = () => {
   const { login, user } = useAuth();
 
   const onSubmit = async (data) => {
-    console.log(data);
+    setLoading(true)
 
     try {
       const res = await axios.post(
@@ -94,7 +91,6 @@ const LogIn = () => {
                   placeholder="name@company.com"
                   required=""
                 />
-                {/* //formState.ullil.errors.ullil.email undenkil email.message */}
                 <p className="text-red-500 text-sm mt-2">
                   {formState.errors.email?.message}
                 </p>
@@ -124,11 +120,11 @@ const LogIn = () => {
                   {formState.errors.password?.message}
                 </p>
               </div>
-              {formState.isSubmitting && (
+              {/* {formState.isSubmitting && (
                 <p className="text-red-700 text-sm md:text-lg">
                   Please wait some time.The data is fetching
                 </p>
-              )}
+              )} */}
 
               <div className="flex items-center justify-between">
                 <div className="flex items-start">
