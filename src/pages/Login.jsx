@@ -39,14 +39,13 @@ const LogIn = () => {
     }
   };
   const handleGoogleLogin = async (data) => {
+    setLoading(true)
     try {
       const response = await axios.post(
         "https://tinytales-server.onrender.com/auth/google-auth",
         { credential: data.credential }
       );
-      if (!response.data) {
-        setLoading(true);
-      }
+     
       login(response.data);
     } catch (err) {
       toast("Could not authenticate with google");
