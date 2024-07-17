@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {ChevronDown, Edit, ThumbsDown, ThumbsUp, Trash } from 'lucide-react'
+import {ChevronDown, Edit, LoaderIcon, ThumbsDown, ThumbsUp, Trash } from 'lucide-react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/Authcontext';
@@ -14,6 +14,7 @@ const Profile = () => {
     const {user} = useAuth()
 
     const [blogs,setBlogs]=useState([]);
+    const [loading,setLoading]=useState(true)
     console.log(blogs);
     const fetchBlogs = async()=>{
       try{
@@ -25,6 +26,7 @@ const Profile = () => {
            })
          console.log(res.data);
          setBlogs(res.data.posts.reverse())
+         setLoading(false)
       }catch(err){
          console.log(err);
       }
@@ -55,7 +57,11 @@ const Profile = () => {
         }
     }
     return (
-        <div className='w-full  min-h-screen dark:bg-white p-4 md:px-12 pt-20 '>
+        
+        <div className='w-full  min-h-scree p-4 md:px-12 pt-20 '>
+            {loading&&<div className="absolute w-full h-screen md:h-screen flex justify-center items-center top-0 left-0 bg-[#00000050]">
+          <LoaderIcon className="h-28 w-28 animate-spin" />
+        </div>}
             <div className='w-full bg-[#FDF9F6] my-5 h-28 flex flex-col items-center justify-evenly text-black/65 '>
                 <h1 className='text-3xl font-bold'>{user.user.username}</h1>
                 <p className='text-lg'><span className='text-xl font-bold mr-2'>{blogs.length}</span>Posts</p>
@@ -66,7 +72,7 @@ const Profile = () => {
 
             </div>) : (
             <div className='w-full flex flex-col gap-5 items-center '>
-                {blogs.map((blog, i) =>  (
+                {blogs?.map((blog, i) =>  (
                     
                     <div key={i} className={`relative w-full flex flex-col md:flex-row justify-between items-center border-2 bg-[#FDF9F6] gap-8 shadow-md p-4 md:p-10 ${i % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"}`}>
                         <img src={blog.image} alt="" className='h-auto w-full md:w-1/3' />
@@ -88,7 +94,7 @@ const Profile = () => {
                                     <p className='text-sm'>{blog.dislikes.length}</p>
                                 </div>
                             </div>
-                            <div className='flex gap-3 p-1 justify-evenly '>
+                            <div className='flex gap-3 p-1 '>
                                 <Link to={`/edit-post/${blog._id}`}>
                                 <button type="submit" className="w-28 md:w-fit px-3  md:px-10 flex  items-center justify-center gap-1 text-white cursor-pointer hover:bg-orange-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-xs md:text-sm py-1.5 md:py-2.5 text-center bg-orange-600 "><Edit/> Edit Post</button>
 
